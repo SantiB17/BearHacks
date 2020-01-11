@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "892800247748",
+    "firebase_url": "https://bearhacks.firebaseio.com",
+    "project_id": "bearhacks",
+    "storage_bucket": "bearhacks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892800247748:android:5ae8a0a3a4929f66a3e691",
+        "android_client_info": {
+          "package_name": "com.santi.bearhacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892800247748-l124diec4blsjcfvm4ps41ksb83pb0pu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5dSeDHnemnWwR1W6Ybm6gwqQrc9HvlFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892800247748-l124diec4blsjcfvm4ps41ksb83pb0pu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
