@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
   //  ArrayList<Users> list = new ArrayList<Users>();
-
+  Users NameJ = new Users();
     private EditText enterName;
     private EditText enterPassword;
     private Button loginButton;
@@ -35,7 +35,12 @@ public class MainActivity extends AppCompatActivity {
         enterPassword = findViewById(R.id.user_password);
         loginButton = findViewById(R.id.login_button);
 
-
+        if(NameJ != null) {
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            Log.d("Name", NameJ.getName());
+            intent.putExtra("Joe", NameJ);
+            startActivity(intent);
+        }
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void validate(String userName, String password) {
         if(userName.equals("Joe") && password.equals("rogan")) {
-            Users NameJ = new Users();
+             NameJ = new Users();
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             Log.d("Name", NameJ.getName());
             intent.putExtra("Joe", NameJ);

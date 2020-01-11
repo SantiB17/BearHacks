@@ -8,11 +8,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.io.Serializable;
 import java.text.NumberFormat;
 import java.util.jar.Attributes;
 
+
 public class SecondActivity extends AppCompatActivity {
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private int hours =0;
     private TextView hoursDisplay;
