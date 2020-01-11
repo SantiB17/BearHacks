@@ -2,6 +2,9 @@
     <string name="app_name">BearHacks</string>
     <string name="username">Enter name</string>
     <string name="user_age">Enter Age</string>
-    <string name="button_next">NEXT</string>
+    <string name="button_next">login</string>
     <string name="hours_worked">Enter the hours you worked</string>
+    <string name="save">SAVE</string>
+    <string name="user_hours">Enter hours worked</string>
+    <string name="password">Enter password</string>
 </resources>
