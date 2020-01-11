@@ -7,4 +7,5 @@
     <string name="save">SAVE</string>
     <string name="user_hours">Enter hours worked</string>
     <string name="password">Enter password</string>
+    <string name ="hoursAmount">0</string>
 </resources>

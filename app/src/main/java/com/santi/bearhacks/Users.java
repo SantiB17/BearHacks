@@ -1,21 +1,15 @@
 package com.santi.bearhacks;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable {
     private String name;
-    private int age;
+  //  private int age;
     private int hoursWorked;
 
     public Users () {
-        this.name = "john";
-        this.age = 12;
-        this.hoursWorked = 1;
-    }
-
-    public Users(String name, int age, int hours) {
-        this.name = name;
-        this.age = age;
-        this.hoursWorked = hours;
-        //this.hoursWorked = hoursWorked;
+        this.name = "Joe Rogan";
+        this.hoursWorked = 0;
     }
 
     public String getName() {
@@ -23,15 +17,7 @@ public class Users {
     }
 
     public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+        this.name += name;
     }
 
     public int getHoursWorked() {

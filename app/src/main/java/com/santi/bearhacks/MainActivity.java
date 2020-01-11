@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
   //  ArrayList<Users> list = new ArrayList<Users>();
-    Users person = new Users();
+
     private EditText enterName;
     private EditText enterPassword;
     private Button loginButton;
@@ -46,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void validate(String userName, String password) {
         if(userName.equals("Joe") && password.equals("rogan")) {
+            Users NameJ = new Users();
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            Log.d("Name", NameJ.getName());
+            intent.putExtra("Joe", NameJ);
             startActivity(intent);
         }
         else{
@@ -58,5 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    }
+
+
+}
 
