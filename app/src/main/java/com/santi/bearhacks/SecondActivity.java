@@ -62,6 +62,7 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 
+
     public void graphView(View v) {
         Intent intent = new Intent(SecondActivity.this, GraphActivity.class);
         startActivity(intent);
