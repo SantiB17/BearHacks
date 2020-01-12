@@ -4,12 +4,14 @@ import java.io.Serializable;
 
 public class Users implements Serializable {
     private String name;
-  //  private int age;
     private int hoursWorked;
+
 
     public Users () {
         this.name = "Joe Rogan";
         this.hoursWorked = 0;
+
+
     }
 
     public String getName() {

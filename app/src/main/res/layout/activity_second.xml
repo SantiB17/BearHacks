@@ -48,13 +48,24 @@
         android:id="@+id/buttonG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/graphview"
+        android:layout_marginStart="68dp"
         android:onClick="graphView"
+        android:text="@string/graphview"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_add_hours"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.307" />
+
+    <Button
+        android:id="@+id/dayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="newDay"
+        android:text="New Day"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonG"
+        app:layout_constraintTop_toBottomOf="@+id/button_add_hours"
+        app:layout_constraintVertical_bias="0.31" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
