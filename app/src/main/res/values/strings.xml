@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BearHacks</string>
+    <string name="app_name">WorkTrend</string>
     <string name="username">Enter name</string>
     <string name="user_age">Enter Age</string>
     <string name="button_next">login</string>
