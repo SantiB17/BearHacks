@@ -68,12 +68,12 @@ public class SecondActivity extends AppCompatActivity {
         reff.child(this.priorKey).setValue(Joe);
 
 
-      //  Calendar calendar = Calendar.getInstance();
-       // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm");
-       // String dateTime = simpleDateFormat.format(calendar.getTime());
-       // Log.d("Display date: ", " " + dateTime);
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm");
+        String dateTime = simpleDateFormat.format(calendar.getTime());
+        Log.d("Display date: ", " " + dateTime);
 
-      //  int val = Integer.parseInt(dateTime) % 10;
+        int val = Integer.parseInt(dateTime) % 10;
 
 
 

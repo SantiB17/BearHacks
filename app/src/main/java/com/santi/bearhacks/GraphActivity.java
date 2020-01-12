@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -15,16 +16,16 @@ public class GraphActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graph);
 
-        //   GraphView graphView = (GraphView)findViewById(R.id.graphview);
-/*        LineGraphSeries<DataPoint>series = new LineGraphSeries<DataPoint>(new DataPoint[]{
-        new DataPoint(0,1),
-        new DataPoint(4,5),
-        new DataPoint(7,6),
-        new DataPoint(4, 8),
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+       // LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[]{
+        BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[]{
+                new DataPoint(0, 1),
+                new DataPoint(1, 5),
+                new DataPoint(2, 3),
+                new DataPoint(3, 2),
+                new DataPoint(4, 6)
         });
-      //  graphView.addSeries(series);
+        graph.addSeries(series);
     }
 
-} */
-    }
 }
