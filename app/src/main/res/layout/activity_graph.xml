@@ -14,5 +14,30 @@
         android:layout_height="448dp"
         android:layout_centerInParent="true" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/graph"
+        android:layout_alignEnd="@+id/graph"
+        android:layout_alignBottom="@+id/graph"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="-27dp"
+        android:text="Days" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/graph"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="-231dp"
+        android:layout_toStartOf="@+id/graph"
+        android:rotation="270"
+        android:text="Hours" />
+
 
 </RelativeLayout>

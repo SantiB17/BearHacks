@@ -82,12 +82,12 @@ public class SecondActivity extends AppCompatActivity {
             daysPassed.setText(String.valueOf(days));
             reff.child(this.priorKey).setValue(Joe);
             Joe.log[index]+= hours;
+
             index++;
         }
         else{
             //Keeps index range from 0 to 7
             index = 0;
-            days = 0;
             Log.d("Index: ", " " + index);
         }
     }
