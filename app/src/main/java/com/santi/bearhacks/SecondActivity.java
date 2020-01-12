@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Date;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
@@ -25,6 +27,10 @@ public class SecondActivity extends AppCompatActivity {
 
 
     private int hours =0;
+
+    //index for a potential array of our data.
+    private int index = 0;
+
  //   private Button button_G;
     private TextView hoursDisplay;
     private TextView timeView;
@@ -33,6 +39,7 @@ public class SecondActivity extends AppCompatActivity {
     private String currentDateTimeString;
     DatabaseReference reff;
     String priorKey;
+    int []array = new int[7];
 
 
     private int test;
@@ -59,24 +66,48 @@ public class SecondActivity extends AppCompatActivity {
         Intent intent = new Intent(SecondActivity.this, GraphActivity.class);
         startActivity(intent);
     }
+
+    //Once clicked change index position in the week array. (need to make an array)
+    public void newDay(View view){
+        if(index < 7) {
+            hours = 0;
+            Joe.setHoursWorked(hours);
+            hoursDisplay.setText(String.valueOf(hours));
+            reff.child(this.priorKey).setValue(Joe);
+
+            index++;
+        }
+        else{
+            //Keeps index range from 0 to 7
+            index = 0;
+            Log.d("Index: ", " " + index);
+        }
+    }
+
     public void addHours(View view) {
-        hours += 1;
-        Joe.setHoursWorked(hours);
-        Log.d("Hours: ", " " + Joe.getHoursWorked());
-        hoursDisplay.setText(String.valueOf(hours));
-        Joe.setHoursWorked(hours);
-        reff.child(this.priorKey).setValue(Joe);
+
+            if(hours < 24) {
+                hours += 1;
+                Joe.setHoursWorked(hours);
+                Log.d("Hours: ", " " + Joe.getHoursWorked());
+                hoursDisplay.setText(String.valueOf(hours));
+                // Joe.setHoursWorked(hours);
+                reff.child(this.priorKey).setValue(Joe);
+            }
+            else{
+                Toast.makeText(getApplicationContext(),"Hours in day exceeded!",Toast.LENGTH_SHORT).show();
+
+            }
 
 
+/*  Not useable for right now
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm");
         String dateTime = simpleDateFormat.format(calendar.getTime());
-        Log.d("Display date: ", " " + dateTime);
-
         int val = Integer.parseInt(dateTime) % 10;
-
-
-
+        Log.d("DATEVAL: ", " "+ val);
+        Log.d("DATETIME: ", " " + dateTime);
+        */
 
 
     }
