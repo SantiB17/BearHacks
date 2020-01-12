@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "892800247748-vvqtde8gomus99qcno9c0hj7vqd57i34.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.santi.bearhacks",
+            "certificate_hash": "2d41e72da6edc21d0254863c5c4a357df0154049"
+          }
+        },
+        {
           "client_id": "892800247748-l124diec4blsjcfvm4ps41ksb83pb0pu.apps.googleusercontent.com",
           "client_type": 3
         }

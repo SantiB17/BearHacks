@@ -1,49 +1,55 @@
 package com.santi.bearhacks;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.os.Parcelable;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.firebase.firestore.FirebaseFirestore;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.Serializable;
-import java.text.NumberFormat;
-import java.util.jar.Attributes;
+
 
 
 public class SecondActivity extends AppCompatActivity {
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private int hours =0;
     private TextView hoursDisplay;
-    private Serializable user;
+    private Serializable person;
     private Users Joe;
+    DatabaseReference reff;
+    String priorKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        hoursDisplay = findViewById(R.id.hoursAmount);
- user =  getIntent().getSerializableExtra("Joe");
-  Joe = (Users) user;
-  //addHours(Joe.getHoursWorked());
+
+        reff = FirebaseDatabase.getInstance().getReference().child("Users");
+       hoursDisplay = findViewById(R.id.hoursAmount);
+        person =  getIntent().getSerializableExtra("Joe");
+         Joe = (Users) person;
+        this.priorKey = reff.child("Users").getKey();
   Log.d("User Num: ", " " + Joe.getHoursWorked());
 
     }
 
-   /* public void displayHours(int v){
-
-    }*/
     public void addHours(View view) {
         hours += 1;
         Joe.setHoursWorked(hours);
         Log.d("Hours: ", " " + Joe.getHoursWorked());
         hoursDisplay.setText(String.valueOf(hours));
-
+        Joe.setHoursWorked(hours);
+        reff.child(this.priorKey).setValue(Joe);
+      //  reff.push().setValue(Joe);
     }
 }
