@@ -10,8 +10,8 @@
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph"
-        android:layout_width="363dp"
-        android:layout_height="447dp"
+        android:layout_width="311dp"
+        android:layout_height="448dp"
         android:layout_centerInParent="true" />
 
 

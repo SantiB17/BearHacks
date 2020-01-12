@@ -33,10 +33,12 @@ public class SecondActivity extends AppCompatActivity {
 
  //   private Button button_G;
     private TextView hoursDisplay;
+    private TextView daysPassed;
     private TextView timeView;
     private Serializable person;
     private Users Joe;
     private String currentDateTimeString;
+    private int days;
     DatabaseReference reff;
     String priorKey;
     int []array = new int[7];
@@ -55,6 +57,7 @@ public class SecondActivity extends AppCompatActivity {
         currentDateTimeString = java.text.DateFormat.getDateTimeInstance().format(new Date());
         reff = FirebaseDatabase.getInstance().getReference().child("Users");
        hoursDisplay = findViewById(R.id.hoursAmount);
+       daysPassed = findViewById(R.id.numdays);
         person =  getIntent().getSerializableExtra("Joe");
          Joe = (Users) person;
         this.priorKey = reff.child("Users").getKey();
@@ -65,22 +68,26 @@ public class SecondActivity extends AppCompatActivity {
 
     public void graphView(View v) {
         Intent intent = new Intent(SecondActivity.this, GraphActivity.class);
+        intent.putExtra("Joe",Joe);
         startActivity(intent);
     }
 
     //Once clicked change index position in the week array. (need to make an array)
     public void newDay(View view){
         if(index < 7) {
-            hours = 0;
+            days++;
             Joe.setHoursWorked(hours);
+            hours = 0;
             hoursDisplay.setText(String.valueOf(hours));
+            daysPassed.setText(String.valueOf(days));
             reff.child(this.priorKey).setValue(Joe);
-
+            Joe.log[index]+= hours;
             index++;
         }
         else{
             //Keeps index range from 0 to 7
             index = 0;
+            days = 0;
             Log.d("Index: ", " " + index);
         }
     }
@@ -89,7 +96,7 @@ public class SecondActivity extends AppCompatActivity {
 
             if(hours < 24) {
                 hours += 1;
-                Joe.setHoursWorked(hours);
+                Joe.log[index]++;
                 Log.d("Hours: ", " " + Joe.getHoursWorked());
                 hoursDisplay.setText(String.valueOf(hours));
                 // Joe.setHoursWorked(hours);

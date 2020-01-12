@@ -1,10 +1,13 @@
 package com.santi.bearhacks;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Users implements Serializable {
     private String name;
     private int hoursWorked;
+    int[] log = new int[7];
+
 
 
     public Users () {

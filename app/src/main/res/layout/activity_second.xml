@@ -10,11 +10,13 @@
         android:id="@+id/displayName"
         android:layout_width="81dp"
         android:layout_height="42dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="132dp"
         android:text="@string/hours"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,10 +25,12 @@
         android:layout_width="99dp"
         android:layout_height="32dp"
         android:text="@string/hoursAmount"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintHorizontal_bias="0.605"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/displayName"
         app:layout_constraintVertical_bias="0.099" />
@@ -36,11 +40,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
-        android:layout_marginTop="68dp"
-        android:text="@string/add_hours"
+        android:layout_marginTop="64dp"
         android:onClick="addHours"
+        android:text="@string/add_hours"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hoursAmount" />
 
@@ -48,13 +52,13 @@
         android:id="@+id/buttonG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="64dp"
         android:onClick="graphView"
         android:text="@string/graphview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_add_hours"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.135" />
 
     <Button
         android:id="@+id/dayButton"
@@ -64,8 +68,37 @@
         android:text="New Day"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toEndOf="@+id/buttonG"
         app:layout_constraintTop_toBottomOf="@+id/button_add_hours"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintVertical_bias="0.136" />
+
+    <TextView
+        android:id="@+id/dayOfWeek"
+        android:layout_width="202dp"
+        android:layout_height="55dp"
+        android:text="Days Passed:"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textColorLink="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.745"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonG"
+        app:layout_constraintVertical_bias="0.148" />
+
+    <TextView
+        android:id="@+id/numdays"
+        android:layout_width="130dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="68dp"
+        android:text="0"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.691"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dayOfWeek" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
